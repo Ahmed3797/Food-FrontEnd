@@ -24,7 +24,6 @@ const SignIn = ({ closeDialog }) => {
         if (response.ok) {
           const data = await response.json();
           const { token } = data;
-          console.log(token);
           const now = new Date().getTime();
           localStorage.setItem("authToken", token);
           localStorage.setItem("tokenTimestamp", now);

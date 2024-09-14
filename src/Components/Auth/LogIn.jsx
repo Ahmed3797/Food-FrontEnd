@@ -36,7 +36,7 @@ const LogIn = ({ closeDialog }) => {
         }
       })
       .catch((error) => {
-        console.log(error);
+    
 
         toast.error("Login failed. Please check your credentials.", {
           autoClose: 3000,
