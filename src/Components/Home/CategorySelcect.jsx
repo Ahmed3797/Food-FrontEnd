@@ -6,8 +6,9 @@ const CategorySelcect = () => {
   const URL = import.meta.env.VITE_URL;
   const [prodUrl, setProdUrl] = useState(`${URL}/api/products`);
 
+
   function setUrl(cats) {
-    const url = `http://localhost:3000/api/products?cats=${cats}`;
+    const url = `${URL}/api/products?cats=${cats}`;
     setProdUrl(url);
   }
   return (

@@ -1,5 +1,4 @@
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 import { MinusInTotalPrice, AddInTotalPrice } from "../Store/cartSlice";
 import { store } from "../Store/Store";
 

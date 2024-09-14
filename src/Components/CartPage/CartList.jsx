@@ -5,6 +5,7 @@ import useFetch from "../../hooks/FetchHook";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { MinusInTotalPrice } from "../../Store/cartSlice";
+import { ThreeDots } from "react-loader-spinner";
 
 const CartList = () => {
   const URL = import.meta.env.VITE_URL;
@@ -13,7 +14,7 @@ const CartList = () => {
   const [cartItemss, setCartItems] = useState([]);
 
   const token = localStorage.getItem("authToken");
-  let { data: fetchedCartItems } = useFetch(`${URL}/api/carts/`, {
+  let { data: fetchedCartItems, loading } = useFetch(`${URL}/api/carts/`, {
     method: "Get",
     headers: {
       "Content-Type": "application/json",
@@ -77,6 +78,25 @@ const CartList = () => {
     let price = Number(calculateTotalPrice()) + 50;
     return price;
   };
+
+  if (loading) {
+    return (
+      <div className="h-[400px] flex justify-center items-center ">
+        <ThreeDots
+          height={80}
+          width={80}
+          color="#201E43"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          ariaLabel="oval-loading"
+          secondaryColor="#4fa94d"
+          strokeWidth={2}
+          strokeWidthSecondary={2}
+        />
+      </div>
+    );
+  }
   return (
     <div className="min-h-[400px]">
       {cartItemss?.length > 0 ? (

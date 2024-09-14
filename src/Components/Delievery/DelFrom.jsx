@@ -1,6 +1,8 @@
 import React, { useRef, useImperativeHandle, forwardRef } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 const DelFrom = forwardRef((props, ref) => {
   const navigate = useNavigate();
@@ -13,6 +15,8 @@ const DelFrom = forwardRef((props, ref) => {
   const onSubmit = async (data) => {
     const URL = import.meta.env.VITE_URL;
     const token = localStorage.getItem("authToken");
+  try {
+
     const response = await fetch(`${URL}/api/orders`, {
       method: "POST",
       headers: {
@@ -30,11 +34,34 @@ const DelFrom = forwardRef((props, ref) => {
         },
       }),
     });
-
+    
     const result = await response.json();
     if (response.ok) {
+      toast.success("Order created successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       navigate("/");
     }
+  } catch (error) {
+    toast.error("Order didnot created succesfully", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  }
+
+    
+
+    
+    
   };
 
   useImperativeHandle(ref, () => ({
