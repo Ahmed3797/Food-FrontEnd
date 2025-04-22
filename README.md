@@ -1,5 +1,6 @@
+
 ```markdown
-# 🥗 Aam – Customer Website
+ 🥗 Aam – Customer Website
 
 ![React](https://img.shields.io/badge/React-Frontend-blue?logo=react)
 ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-blue?logo=tailwindcss)
@@ -31,6 +32,7 @@ This is the public-facing interface of **Aam** — a modern and responsive food 
 - Context API for global state
 - Firebase or Cloudinary for media (fetched via API)
 
+---
 
 ## 📁 Folder Structure
 
@@ -38,7 +40,7 @@ Food-FrontEnd/ │ ├── src/ │ ├── components/ # UI components │ 
 
 
 
-## 📦 Setup
+ 📦 Setup
 
 ```bash
 git clone https://github.com/Ahmed3797/Food-FrontEnd.git
@@ -49,7 +51,11 @@ npm run dev
 🌍 Live Demo
 ➡️ https://food-front-end-one.vercel.app
 
- Environment (Optional)
+🔌 Environment (Optional)
 If needed:
 
+env
+Copy
+Edit
 VITE_API_BASE_URL=https://food-mern-api.vercel.app/
+
