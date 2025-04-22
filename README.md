@@ -1,8 +1,3 @@
-
----
-
-## 🌐 2. Aam Customer Website – `README.md`
-
 ```markdown
 # 🥗 Aam – Customer Website
 
@@ -36,14 +31,12 @@ This is the public-facing interface of **Aam** — a modern and responsive food 
 - Context API for global state
 - Firebase or Cloudinary for media (fetched via API)
 
----
 
 ## 📁 Folder Structure
 
 Food-FrontEnd/ │ ├── src/ │ ├── components/ # UI components │ ├── pages/ # Route components │ ├── context/ # Global state management │ ├── utils/ # Helpers and API functions │ └── App.jsx │ ├── public/ └── vite.config.js
 
 
----
 
 ## 📦 Setup
 
