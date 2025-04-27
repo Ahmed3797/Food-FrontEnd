@@ -20,11 +20,11 @@ const OrderItem = ({ item }) => {
     {
      return pending
     }
-    else if(item.status == "accepted")
+    else if(item.status == "shipped")
     {
      return confirmed
     }
-    elseif(item.status == "delivered")
+    else if(item.status == "delivered")
     {
       return delivered
     }
