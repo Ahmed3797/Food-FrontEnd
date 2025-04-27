@@ -26,7 +26,7 @@ const ProductList = ({ url }) => {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-around w-[100%] items-center gap-8 ">
+      <div className="flex flex-wrap justify-center w-[100%] items-center gap-8 ">
         {data?.map((item) => {
           return <ItemsCard item={item} key={item._id} />;
         })}

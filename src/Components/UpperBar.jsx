@@ -17,6 +17,9 @@ const UpperBar = () => {
 
   const closeDialog = () => {
     dialogRef.current.close();
+    let check = isTokenValid();
+    setIsLoggedIn(check)
+    
   };
 
   const handleLogout = () => {
@@ -32,14 +35,15 @@ const UpperBar = () => {
   return (
     <div className="bg-white w-[100%] p-4 flex justify-between items-center">
       <div>
-        <h1 className="text-4xl font-bold text-[#201E43]">AAM</h1>
+        <h1 className="text-4xl font-bold text-[#FFCDB2]">AAM</h1>
       </div>
 
       <div className="hidden md:block">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `mx-2 ${isActive ? "border-b-4 border-[#201E43]" : ""}`
+            `mx-2 ${isActive ? "border-b-8 border-[#FFCDB2] bg-[#FFB4A2] p-2 rounded-md text-white" : ""} 
+          `
           }
         >
           Home
@@ -47,7 +51,7 @@ const UpperBar = () => {
         <NavLink
           to="/cart"
           className={({ isActive }) =>
-            `mx-2 ${isActive ? "border-b-4 border-[#201E43]" : ""}`
+            `mx-2 ${isActive ? "border-b-4 border-[#FFCDB2] bg-[#FFB4A2] p-2 rounded-md text-white " : ""}`
           }
         >
           Cart
@@ -55,16 +59,24 @@ const UpperBar = () => {
         <NavLink
           to="/orders"
           className={({ isActive }) =>
-            `mx-2 ${isActive ? "border-b-4 border-[#201E43]" : ""}`
+            `mx-2 ${isActive ? "border-b-4 border-[#FFCDB2] bg-[#FFB4A2] p-2 rounded-md text-white" : ""}`
           }
         >
           Order
+        </NavLink>
+        <NavLink
+          to="/filter"
+          className={({ isActive }) =>
+            `mx-2 ${isActive ? "border-b-4 border-[#FFCDB2] bg-[#FFB4A2] p-2 rounded-md text-white" : ""}`
+          }
+        >
+          Filter
         </NavLink>
       </div>
 
       <div className="hidden md:block">
         <button
-          className="text-white bg-[#201E43] p-2 rounded-md"
+          className="text-white bg-[#FFCDB2] p-2 rounded-md"
           onClick={isLoggedIn ? handleLogout : openDialog}
         >
           {isLoggedIn ? "LOG OUT" : "LOG IN"}
@@ -108,7 +120,7 @@ const UpperBar = () => {
             Order
           </NavLink>
           <button
-            className="text-white bg-[#201E43] p-2 rounded-md mt-4"
+            className="text-white bg-[#FFCDB2] p-2 rounded-md mt-4"
             onClick={isLoggedIn ? handleLogout : openDialog}
           >
             {isLoggedIn ? "LOG OUT" : "LOG IN"}

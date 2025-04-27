@@ -13,13 +13,13 @@ const Dialog = ({ dialogRef, closeDialog }) => {
           <IoMdClose size={20} />
         </button>
       </div>
-      <h1 className="text-4xl font-bold text-[#201E43] text-center mb-3">
+      <h1 className="text-4xl font-bold text-[#FFCDB2] text-center mb-3">
         AAM
       </h1>
       <hr />
       <div className="flex w-[100%] p-2 justify-between my-3">
         <button
-          className="hover:border-b-2 font-semibold border-[#201E43] w-[50%] h-10"
+          className="hover:border-b-2 font-semibold border-[#FFCDB2] w-[50%] h-10"
           onClick={() => {
             setToggle(false);
           }}
@@ -27,7 +27,7 @@ const Dialog = ({ dialogRef, closeDialog }) => {
           Sign IN
         </button>
         <button
-          className="hover:border-b-2 font-semibold w-[50%] border-[#201E43] h-10"
+          className="hover:border-b-2 font-semibold w-[50%] border-[#FFCDB2] h-10"
           onClick={() => {
             setToggle(true);
           }}

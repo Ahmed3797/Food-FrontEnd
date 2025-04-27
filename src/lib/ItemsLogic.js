@@ -14,7 +14,7 @@ export const handleAddItem = (item, price) => {
       pauseOnHover: true,
       draggable: true,
     });
-    return;
+    return false;
   }
 
   const obj = {

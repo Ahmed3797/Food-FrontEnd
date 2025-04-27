@@ -8,6 +8,7 @@ import DeliveryPage from "./pages/DeliveryPage";
 import { Provider } from "react-redux";
 import { store } from "./Store/Store";
 import Orders from "./pages/Orders";
+import Filters from "./pages/Filters";
 
 const routes = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const routes = createBrowserRouter([
         path: "orders",
         element: <Orders />,
       },
+      {
+        path:"filter",
+        element:<Filters />
+      }
     ],
   },
 ]);

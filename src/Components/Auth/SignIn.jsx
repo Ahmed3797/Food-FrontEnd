@@ -105,7 +105,7 @@ const SignIn = ({ closeDialog }) => {
           </div>
           <button
             type="submit"
-            className="w-full px-4 py-2 font-medium text-white bg-[#201E43] rounded-md hover:bg-[#46438a] focus:outline-none focus:ring-2 focus:ring-offset-2 "
+            className="w-full px-4 py-2 font-medium text-white bg-[#FFCDB2] rounded-md hover:bg-[#B5828C] focus:outline-none focus:ring-2 focus:ring-offset-2 "
           >
             Sign In
           </button>

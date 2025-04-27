@@ -1,10 +1,21 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import DelFrom from "../Components/Delievery/DelFrom";
-import { useSelector } from "react-redux";
+import useFetch from "../hooks/FetchHook";
 
 const DeliveryPage = () => {
-  const totalPrice = useSelector((state) => state.cart.totalPrice);
   const formRef = useRef();
+
+  const URL = import.meta.env.VITE_URL;
+  const token = localStorage.getItem("authToken");
+  let {data} = useFetch(`${URL}/api/carts/price`, {
+    method: "Get",
+    headers: {
+      "Content-Type": "application/json",
+      "x-auth-token": token,
+    },
+  });
+ 
+  console.log("the price is ",data)
 
   const handlePlaceOrder = () => {
     if (formRef.current) {
@@ -21,15 +32,15 @@ const DeliveryPage = () => {
           <div className="w-[100%]">
             <div className="flex w-[100%] justify-between border-b-2 my-2">
               <p>Sub total </p>
-              <p>{totalPrice}</p>
+              <p>${data.subtotal}</p>
             </div>
             <div className="flex w-[100%] justify-between border-b-2 my-2">
               <p>Delivery fee</p>
-              <p>$50</p>
+              <p>${data.deliveryFee}</p>
             </div>
             <div className="flex w-[100%] justify-between border-b-2 my-2">
               <p>Total</p>
-              <p>${totalPrice + 50}</p>
+              <p>${data.total}</p>
             </div>
           </div>
         </div>
@@ -38,7 +49,7 @@ const DeliveryPage = () => {
           <p className="my-3">Cash On Delivery</p>
         </div>
         <button
-          className="bg-[#201E43] text-white p-3 rounded-sm mt-4 hover:bg-[#0e0d20]"
+          className="bg-[#FFB4A2] text-white p-3 rounded-sm mt-4 hover:bg-[#B5828C]"
           onClick={handlePlaceOrder}
         >
           PLACE ORDER

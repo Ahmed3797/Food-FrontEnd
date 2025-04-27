@@ -10,7 +10,6 @@ const MainNavigation = () => {
         <UpperBar />
         <Outlet />
       </div>
-
       <Footer />
     </>
   );

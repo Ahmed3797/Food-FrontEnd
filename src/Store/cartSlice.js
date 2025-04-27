@@ -23,10 +23,6 @@ export const cartPriceSlice = createSlice({
     {
       state.totalPrice=0
     }
-  
-
-
-    
   },
 });
 

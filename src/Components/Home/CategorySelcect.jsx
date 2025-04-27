@@ -13,7 +13,7 @@ const CategorySelcect = () => {
   }
   return (
     <div>
-      <div className="flex flex-wrap">
+      <div className="flex overflow-x-auto scrollbar-hide">
         <div className="m-3 flex flex-col items-center justify-center">
           <button
             className="w-20 h-20 rounded-full bg-slate-100 p-2 hover:bg-slate-400"

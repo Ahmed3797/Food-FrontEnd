@@ -16,9 +16,9 @@ const MyAccordion = ({ data, name }) => {
       className="border border-gray-200 rounded-lg shadow-lg bg-white"
     >
       <AccordionItem className="border-b border-gray-200">
-        <AccordionItemHeading className="w-full text-left  bg-[#4F8D9C] hover:bg-[#EFEFEF] flex justify-between items-center transition-colors duration-200">
-          <AccordionItemButton className="w-full text-left p-4 bg-[#4F8D9C] hover:bg-[#EFEFEF] flex justify-between items-center transition-colors duration-200">
-            <span className="text-lg font-medium text-gray-800">{name}</span>
+        <AccordionItemHeading className="w-full text-left  bg-[#FFB4A2] hover:bg-[#B5828C] flex justify-between items-center transition-colors duration-200">
+          <AccordionItemButton className="w-full text-left p-4 bg-[#FFB4A2] hover:bg-[#B5828C] flex justify-between items-center transition-colors duration-200">
+            <span className="text-lg font-medium text-gray-700 ">{name}</span>
             <FiChevronDown
               className="text-gray-600 transition-transform duration-200"
               size={20}
@@ -36,7 +36,7 @@ const MyAccordion = ({ data, name }) => {
               </tbody>
             </table>
           ) : (
-            <p className="text-center font-semibold text-blue-500 text-[20px]">
+            <p className="text-center font-semibold text-black text-[20px]">
               No items
             </p>
           )}

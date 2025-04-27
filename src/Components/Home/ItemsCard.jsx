@@ -14,7 +14,7 @@ const ItemsCard = ({ item }) => {
 
   url();
   return (
-    <div className="w-[265px] h-[350px] shadow-lg rounded-lg ">
+    <div className="w-[265px] h-[350px] shadow-lg rounded-lg flex-shrink-0 ">
       <div className="h-[200px]">
         <img
           src={`${item.imageUrl}`}
@@ -27,9 +27,13 @@ const ItemsCard = ({ item }) => {
             {!select && (
               <button
                 onClick={() => {
-                  SetSelect(true);
-                  SetValue(value + 1);
-                  handleAddItem(item, item.price);
+                  
+                  let res=handleAddItem(item, item.price);
+                  if(res !== false)
+                  {
+                    SetSelect(true);
+                    SetValue(value + 1);
+                  }
                 }}
               >
                 <p className="bg-white rounded-full w-6 h-6 flex justify-center items-center ">

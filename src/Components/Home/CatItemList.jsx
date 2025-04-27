@@ -7,9 +7,8 @@ const CatItemList = ({ setUrl }) => {
   const { data: categories, error: caterror } = useFetch(
     `${URL}/api/categories`
   );
-
   return (
-    <div className="flex flex-wrap">
+    <div className="flex overflow-x-auto scrollbar-hide whitespace-nowrap flex-shrink-0">
       {categories?.map((item) => {
         return <CatItem item={item} key={item._id} setUrl={setUrl} />;
       })}
