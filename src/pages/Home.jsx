@@ -20,14 +20,12 @@ const Home =  () => {
 
   useEffect(() => {
     if (categories) {
-      console.log("runesss")
       dispatch(AddAllCategories(categories));
     }
   }, [categories, dispatch]);
   
   const categoriesList =useSelector((state)=>state.category.categories)
 
-  console.log(categoriesList)
     
 
   return (

@@ -8,12 +8,11 @@ import { MinusInTotalPrice } from "../../Store/cartSlice";
 import { ThreeDots } from "react-loader-spinner";
 import HomePageCards from "../Home/HomePageCards";
 import Lottie from "lottie-react";
-import cart from  "../../assets/cart.json"
+import cart from "../../assets/cart.json";
 import { useSelector } from "react-redux";
 
 const CartList = () => {
-
-  const categoriesList =useSelector((state)=>state.category.categories)
+  const categoriesList = useSelector((state) => state.category.categories);
   const URL = import.meta.env.VITE_URL;
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -46,7 +45,6 @@ const CartList = () => {
     })
       .then(async (response) => {
         const data = await response.json();
-        console.log("suucess in deleting data ", data);
         dispatch(MinusInTotalPrice(price));
         toast.success("Item removed from cart!", {
           position: "top-right",
@@ -59,10 +57,8 @@ const CartList = () => {
         setCartItems(() => {
           return data.items;
         });
-        console.log(cartItemss);
       })
       .catch((error) => {
-        console.log(error);
         toast.error("Failed to remove item from cart.", {
           position: "top-right",
           autoClose: 3000,
@@ -132,44 +128,44 @@ const CartList = () => {
               </table>
             </div>
           </div>
-        
-        <div className="flex justify-around items-center h-auto flex-wrap-reverse">
 
-          <div >
-            <h1 className="text-2xl font-bold font[20px] my-4">Cart Totals</h1>
-            <div className="w-[300px]">
-              <div className="flex w-[100%] justify-between border-b-2 my-2">
-                <p>Sub total </p>
-                <p>${calculateTotalPrice()}</p>
+          <div className="flex justify-around items-center h-auto flex-wrap-reverse">
+            <div>
+              <h1 className="text-2xl font-bold font[20px] my-4">
+                Cart Totals
+              </h1>
+              <div className="w-[300px]">
+                <div className="flex w-[100%] justify-between border-b-2 my-2">
+                  <p>Sub total </p>
+                  <p>${calculateTotalPrice()}</p>
+                </div>
+                <div className="flex w-[100%] justify-between border-b-2 my-2">
+                  <p>Delivery fee</p>
+                  <p>$10</p>
+                </div>
+                <div className="flex w-[100%] justify-between border-b-2 my-2">
+                  <p>Toal</p>
+                  <p>${totalPrice()}</p>
+                </div>
               </div>
-              <div className="flex w-[100%] justify-between border-b-2 my-2">
-                <p>Delivery fee</p>
-                <p>$10</p>
-              </div>
-              <div className="flex w-[100%] justify-between border-b-2 my-2">
-                <p>Toal</p>
-                <p>${totalPrice()}</p>
-              </div>
+              <button
+                onClick={() => {
+                  navigate("/del");
+                }}
+                className="bg-[#E5989B] p-2 my-2 text-white rounded-sm w-[220px] hover:bg-[#B5828C]"
+              >
+                PROCEED CHECKOUT
+              </button>
             </div>
-            <button
-              onClick={() => {
-                navigate("/del");
-              }}
-              className="bg-[#E5989B] p-2 my-2 text-white rounded-sm w-[220px] hover:bg-[#B5828C]"
-            >
-              PROCEED CHECKOUT
-            </button>
+
+            <div style={{ height: "380px" }}>
+              <Lottie
+                animationData={cart}
+                loop={true}
+                style={{ height: "100%" }}
+              />
+            </div>
           </div>
-
-
-          <div style={{height:"380px"}}>
-          <Lottie animationData={cart} loop={true} 
-          style={{height:"100%"}}
-          />
-          </div>
-
-          
-        </div>
         </div>
       ) : (
         <div className="flex min-h-[230px] justify-center items-center text-center">

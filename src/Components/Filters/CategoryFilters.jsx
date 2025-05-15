@@ -15,7 +15,6 @@ const CategoryFilters = ({ setCategoryFilters }) => {
       </>
     );
   }
-  console.log(categories);
 
   return (
     <div>

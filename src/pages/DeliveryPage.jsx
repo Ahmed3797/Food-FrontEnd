@@ -15,8 +15,6 @@ const DeliveryPage = () => {
     },
   });
  
-  console.log("the price is ",data)
-
   const handlePlaceOrder = () => {
     if (formRef.current) {
       formRef.current.submitForm();
