@@ -35,7 +35,7 @@ const Results = ({ filters }) => {
         <ThreeDots
           height={80}
           width={80}
-          color="#201E43"
+          color="#FFCDB2"
           wrapperStyle={{}}
           wrapperClass=""
           visible={true}
