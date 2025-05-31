@@ -1,4 +1,4 @@
-name: Build and Upload React App
+name: Build and Upload Vite App
 
 on:
   workflow_dispatch:
@@ -16,10 +16,18 @@ jobs:
         with:
           node-version: 18
 
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: npm-cache-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            npm-cache-
+
       - name: Install Dependencies
         run: npm install
 
-      - name: Build React App
+      - name: Build Vite App
         run: npm run build
 
       - name: Upload Build Artifact
